@@ -1,13 +1,32 @@
 version: "3.1"
 
 rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: Provide stock price when asked
+    steps:
+      - intent: ask_stock_price
+      - action: action_get_stock_price
+
+  - rule: Provide information on demat account
+    steps:
+      - intent: ask_demat
+      - action: utter_ask_demat
+
+  - rule: Provide information on mutual funds
+    steps:
+      - intent: ask_mutual_funds
+      - action: utter_ask_mutual_funds
+
+  - rule: Provide information on S&P 500
+    steps:
+      - intent: ask_sp500
+      - action: utter_ask_sp500

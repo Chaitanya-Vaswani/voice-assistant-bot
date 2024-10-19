@@ -8,26 +8,45 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ask_stock_price
+  - ask_demat
+  - ask_mutual_funds
+  - ask_sp500
+  - ask_stocks
 
 responses:
+  utter_ask_demat:
+    - text: "What would you like to know about demat accounts?"
+  
+  utter_ask_mutual_funds:
+    - text: "What would you like to ask about mutual funds?"
+  
+  utter_ask_sp500:
+    - text: "How can I assist you with the S&P 500?"
+  
+  utter_ask_stocks:
+    - text: "What stock information are you looking for?"
+    
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hey! How can I assist you with your finances today?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Don't worry, everything will be okay."
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great! Let me know if you need anything else."
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Goodbye, and take care!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a financial assistant bot here to help you with finance-related queries!"
+
+actions:
+  - action_get_stock_price
 
 session_config:
   session_expiration_time: 60

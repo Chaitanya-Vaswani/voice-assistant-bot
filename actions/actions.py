@@ -1,3 +1,27 @@
+import yfinance as yf
+from rasa_sdk import Action
+
+class ActionGetStockPrice(Action):
+
+    def name(self):
+        return "action_get_stock_price"
+
+    def run(self, dispatcher, tracker, domain):
+        stock_symbol = tracker.get_slot("stock_symbol")
+        if stock_symbol:
+            stock = yf.Ticker(stock_symbol)
+            stock_price = stock.history(period="1d")["Close"].iloc[0]
+            dispatcher.utter_message(text=f"The current price of {stock_symbol.upper()} is ${stock_price:.2f}.")
+        else:
+            dispatcher.utter_message(text="Please provide a valid stock symbol.")
+        return []
+
+
+
+
+
+
+
 # This files contains your custom actions which can be used to run
 # custom Python code.
 #
