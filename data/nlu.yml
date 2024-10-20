@@ -1,69 +1,70 @@
-version: "3.1"
-
+version: "3.0"
 nlu:
-  - intent: greet
-    examples: |
-      - hey
-      - hello
-      - hi
-      - good morning
-      - good evening
-      - hey there
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good evening
 
-  - intent: ask_stock_price
-    examples: |
-      - What is the price of [AAPL](stock_symbol)?
-      - Tell me the price of [TSLA](stock_symbol).
-      - Current price of [MSFT](stock_symbol)?
+- intent: show_portfolio
+  examples: |
+    - show my portfolio
+    - what stocks do I own
+    - list my portfolio
+    - portfolio please
 
-  - intent: ask_stocks
-    examples: |
-      - What are stocks?
-      - Explain stocks.
-      - How do I invest in stocks?
+- intent: add_portfolio
+  examples: |
+    - add {stock_symbol} to my portfolio
+    - I want to buy {stock_symbol}
+    - add {stock_symbol} to my stocks
 
-  - intent: ask_demat
-    examples: |
-      - What is a demat account?
-      - Why do I need a demat account?
+- intent: remove_portfolio
+  examples: |
+    - remove {stock_symbol} from my portfolio
+    - delete {stock_symbol} from my portfolio
 
-  - intent: ask_mutual_funds
-    examples: |
-      - What are mutual funds?
-      - How do mutual funds work?
+- intent: plot_stock
+  examples: |
+    - plot {stock_symbol}
+    - show chart for {stock_symbol}
+    - graph for {stock_symbol}
 
-  - intent: ask_sp500
-    examples: |
-      - What is the S&P 500?
-      - Explain the S&P 500 index.
+- intent: plot_portfolio
+  examples: |
+    - plot my portfolio
+    - show portfolio chart
+    - graph my portfolio
 
-  - intent: goodbye
-    examples: |
-      - goodbye
-      - bye
-      - see you later
+- intent: stock_price
+  examples: |
+    - what is the stock price of {stock_symbol}
+    - tell me the price of {stock_symbol}
+    - current price of {stock_symbol}
 
-  - intent: affirm
-    examples: |
-      - yes
-      - of course
+- intent: calculate_sma
+  examples: |
+    - calculate SMA for {stock_symbol}
+    - show SMA for {stock_symbol}
 
-  - intent: deny
-    examples: |
-      - no
-      - not really
+- intent: calculate_ema
+  examples: |
+    - calculate EMA for {stock_symbol}
+    - show EMA for {stock_symbol}
 
-  - intent: mood_great
-    examples: |
-      - I am feeling very good
-      - I am great
+- intent: calculate_rsi
+  examples: |
+    - calculate RSI for {stock_symbol}
+    - show RSI for {stock_symbol}
 
-  - intent: mood_unhappy
-    examples: |
-      - I am sad
-      - not good
+- intent: calculate_macd
+  examples: |
+    - calculate MACD for {stock_symbol}
+    - show MACD for {stock_symbol}
 
-  - intent: bot_challenge
-    examples: |
-      - are you a bot?
-      - are you human?
+- intent: stock_news
+  examples: |
+    - news for {stock_symbol}
+    - tell me news about {stock_symbol}

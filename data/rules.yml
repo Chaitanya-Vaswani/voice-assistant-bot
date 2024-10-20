@@ -13,7 +13,7 @@ rules:
 
   - rule: Provide stock price when asked
     steps:
-      - intent: ask_stock_price
+      - intent: stock_price
       - action: action_get_stock_price
 
   - rule: Provide information on demat account

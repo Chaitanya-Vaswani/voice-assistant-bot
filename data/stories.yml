@@ -1,54 +1,61 @@
-version: "3.1"
-
+version: "3.0"
 stories:
-  - story: ask about stocks
-    steps:
-      - intent: ask_stocks
-      - action: utter_ask_stocks
+- story: greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
 
-  - story: ask about stock price
-    steps:
-      - intent: ask_stock_price
-      - action: action_get_stock_price
+- story: show portfolio
+  steps:
+  - intent: show_portfolio
+  - action: action_show_portfolio
 
-  - story: ask about demat
-    steps:
-      - intent: ask_demat
-      - action: utter_ask_demat
+- story: add stock to portfolio
+  steps:
+  - intent: add_portfolio
+  - action: action_add_portfolio
 
-  - story: ask about mutual funds
-    steps:
-      - intent: ask_mutual_funds
-      - action: utter_ask_mutual_funds
+- story: remove stock from portfolio
+  steps:
+  - intent: remove_portfolio
+  - action: action_remove_portfolio
 
-  - story: ask about S&P 500
-    steps:
-      - intent: ask_sp500
-      - action: utter_ask_sp500
+- story: plot stock chart
+  steps:
+  - intent: plot_stock
+  - action: action_plot_stock
 
-  - story: happy path
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: mood_great
-      - action: utter_happy
+- story: plot portfolio chart
+  steps:
+  - intent: plot_portfolio
+  - action: action_plot_portfolio
 
-  - story: sad path 1
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
-      - intent: affirm
-      - action: utter_happy
+- story: get stock price
+  steps:
+  - intent: stock_price
+  - action: action_get_stock_price
 
-  - story: sad path 2
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
-      - intent: deny
-      - action: utter_goodbye
+- story: calculate SMA
+  steps:
+  - intent: calculate_sma
+  - action: action_calculate_sma
+
+- story: calculate EMA
+  steps:
+  - intent: calculate_ema
+  - action: action_calculate_ema
+
+- story: calculate RSI
+  steps:
+  - intent: calculate_rsi
+  - action: action_calculate_rsi
+
+- story: calculate MACD
+  steps:
+  - intent: calculate_macd
+  - action: action_calculate_macd
+
+- story: get stock news
+  steps:
+  - intent: stock_news
+  - action: action_stock_news
