@@ -1,70 +1,145 @@
-version: "3.0"
+version: "3.1"
+
 nlu:
-- intent: greet
-  examples: |
-    - hello
-    - hi
-    - hey
-    - good morning
-    - good evening
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - good morning
+      - hey there
+      - what's up?
 
-- intent: show_portfolio
-  examples: |
-    - show my portfolio
-    - what stocks do I own
-    - list my portfolio
-    - portfolio please
+  - intent: goodbye
+    examples: |
+      - bye
+      - see you later
+      - goodbye
+      - take care
+      - have a nice day
 
-- intent: add_portfolio
-  examples: |
-    - add {stock_symbol} to my portfolio
-    - I want to buy {stock_symbol}
-    - add {stock_symbol} to my stocks
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you real?
+      - can you think like a human?
+      - what are you?
+      - can you help me?
 
-- intent: remove_portfolio
-  examples: |
-    - remove {stock_symbol} from my portfolio
-    - delete {stock_symbol} from my portfolio
+  - intent: stock_price
+    examples: |
+      - what's the price of apple stock?
+      - how much is microsoft trading at?
+      - give me the stock price of google
+      - what is the current price of tesla?
+      - tell me the latest price for amazon stock
 
-- intent: plot_stock
-  examples: |
-    - plot {stock_symbol}
-    - show chart for {stock_symbol}
-    - graph for {stock_symbol}
+  - intent: get_stock_news
+    examples: |
+      - what's the latest news about tesla?
+      - any news on apple?
+      - tell me the news for microsoft
+      - what are the updates for google?
+      - give me the latest news on amazon
 
-- intent: plot_portfolio
-  examples: |
-    - plot my portfolio
-    - show portfolio chart
-    - graph my portfolio
+  - intent: ask_demat
+    examples: |
+      - what is a demat account?
+      - can you explain demat accounts?
+      - how does a demat account work?
+      - why do I need a demat account?
+      - what are the benefits of having a demat account?
 
-- intent: stock_price
-  examples: |
-    - what is the stock price of {stock_symbol}
-    - tell me the price of {stock_symbol}
-    - current price of {stock_symbol}
+  - intent: ask_mutual_funds
+    examples: |
+      - what is a mutual fund?
+      - tell me about mutual funds
+      - how do mutual funds work?
+      - what are the types of mutual funds?
+      - why should I invest in mutual funds?
 
-- intent: calculate_sma
-  examples: |
-    - calculate SMA for {stock_symbol}
-    - show SMA for {stock_symbol}
+  - intent: ask_sp500
+    examples: |
+      - what is the S&P 500?
+      - can you tell me about the S&P 500 index?
+      - why is the S&P 500 important?
+      - how is the S&P 500 calculated?
+      - what companies are in the S&P 500?
 
-- intent: calculate_ema
-  examples: |
-    - calculate EMA for {stock_symbol}
-    - show EMA for {stock_symbol}
+  - intent: add_stock_to_portfolio
+    examples: |
+      - add apple to my portfolio
+      - I want to buy microsoft shares
+      - can you add google to my stocks?
+      - I’d like to include tesla in my portfolio
+      - please add amazon to my investment list
 
-- intent: calculate_rsi
-  examples: |
-    - calculate RSI for {stock_symbol}
-    - show RSI for {stock_symbol}
+  - intent: remove_stock_from_portfolio
+    examples: |
+      - sell my apple shares
+      - remove microsoft from my portfolio
+      - I want to get rid of google stocks
+      - can you delete tesla from my stocks?
+      - please remove amazon from my investment list
 
-- intent: calculate_macd
-  examples: |
-    - calculate MACD for {stock_symbol}
-    - show MACD for {stock_symbol}
+  - intent: show_portfolio
+    examples: |
+      - show me my portfolio
+      - what stocks do I own?
+      - can you list my investments?
+      - I want to see my stock holdings
+      - tell me about my portfolio
 
-- intent: stock_news
-  examples: |
-    - news for {stock_symbol}
-    - tell me news about {stock_symbol}
+  - intent: plot_stock_chart
+    examples: |
+      - plot the stock price of apple
+      - show me the chart for microsoft stock
+      - can I see a graph for tesla's stock price?
+      - display the price chart for google
+      - give me the historical chart for amazon stock
+
+  - intent: introduce
+    examples: |
+      - who are you?
+      - tell me about yourself
+      - what can you do?
+      - how can you help me?
+      - introduce yourself
+
+  - intent: ask_rsi
+    examples: |
+      - what is the RSI for AAPL?
+      - calculate the RSI for TSLA
+      - can you tell me the RSI of GOOGL?
+      - what’s the RSI value for AMZN?
+      - find the RSI for MSFT
+
+  - intent: ask_macd
+    examples: |
+      - what is the MACD for AAPL?
+      - calculate the MACD for TSLA
+      - can you tell me the MACD of GOOGL?
+      - what’s the MACD value for AMZN?
+      - find the MACD for MSFT
+
+  - intent: ask_sma
+    examples: |
+      - what is the SMA for AAPL?
+      - calculate the SMA for TSLA
+      - can you tell me the SMA of GOOGL?
+      - what’s the SMA value for AMZN?
+      - find the SMA for MSFT
+
+  - intent: ask_ema
+    examples: |
+      - what is the EMA for AAPL?
+      - calculate the EMA for TSLA
+      - can you tell me the EMA of GOOGL?
+      - what’s the EMA value for AMZN?
+      - find the EMA for MSFT
+      
+  - intent: ask_window_size
+    examples: |
+      - What window size should I use for calculations?
+      - Can you ask for the window size?
+      - Tell me the window size for SMA
+      - What's the default window size?

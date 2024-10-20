@@ -1,61 +1,93 @@
-version: "3.0"
+version: "3.1"
+
 stories:
-- story: greet user
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - story: Greet and help the user
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: introduce
+      - action: utter_introduce
 
-- story: show portfolio
-  steps:
-  - intent: show_portfolio
-  - action: action_show_portfolio
+  - story: User asks for stock price
+    steps:
+      - intent: stock_price
+      - action:  action_get_stock_price
 
-- story: add stock to portfolio
-  steps:
-  - intent: add_portfolio
-  - action: action_add_portfolio
+  - story: User asks for stock news
+    steps:
+      - intent: get_stock_news
+      - action:  action_get_stock_news
 
-- story: remove stock from portfolio
-  steps:
-  - intent: remove_portfolio
-  - action: action_remove_portfolio
+  - story: User adds stock to portfolio
+    steps:
+      - intent: add_stock_to_portfolio
+      - action: action_add_to_portfolio
 
-- story: plot stock chart
-  steps:
-  - intent: plot_stock
-  - action: action_plot_stock
+  - story: User removes stock from portfolio
+    steps:
+      - intent: remove_stock_from_portfolio
+      - action: action_remove_from_portfolio
 
-- story: plot portfolio chart
-  steps:
-  - intent: plot_portfolio
-  - action: action_plot_portfolio
+  - story: User asks to see portfolio
+    steps:
+      - intent: show_portfolio
+      - action: action_view_portfolio
 
-- story: get stock price
-  steps:
-  - intent: stock_price
-  - action: action_get_stock_price
+  - story: User plots stock price chart
+    steps:
+      - intent: plot_stock_chart
+      - action: action_plot_stock_price
 
-- story: calculate SMA
-  steps:
-  - intent: calculate_sma
-  - action: action_calculate_sma
+  - story: User calculates SMA
+    steps:
+      - intent: ask_sma
+      - action: action_calculate_sma
 
-- story: calculate EMA
-  steps:
-  - intent: calculate_ema
-  - action: action_calculate_ema
+  - story: User calculates EMA
+    steps:
+      - intent: ask_ema
+      - action:  action_calculate_ema
 
-- story: calculate RSI
-  steps:
-  - intent: calculate_rsi
-  - action: action_calculate_rsi
+  - story: User calculates RSI
+    steps:
+      - intent: ask_rsi
+      - action: action_calculate_rsi
 
-- story: calculate MACD
-  steps:
-  - intent: calculate_macd
-  - action: action_calculate_macd
+  - story: User calculates MACD
+    steps:
+      - intent: ask_macd
+      - action: action_calculate_macd
 
-- story: get stock news
-  steps:
-  - intent: stock_news
-  - action: action_stock_news
+  - story: User asks about demat account
+    steps:
+      - intent: ask_demat
+      - action: utter_ask_demat
+
+  - story: User asks about mutual funds
+    steps:
+      - intent: ask_mutual_funds
+      - action: utter_ask_mutual_funds
+
+  - story: Respond to bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - story: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+  - story: User calculates EMA
+    steps:
+      - intent: ask_ema
+      - action:  action_calculate_ema
+
+  - story: User asks for stock price
+    steps:
+      - intent: stock_price
+      - action: action_get_stock_price
+
+  - story: User asks for stock news
+    steps:
+      - intent: get_stock_news
+      - action: action_get_stock_news

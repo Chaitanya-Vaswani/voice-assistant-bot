@@ -1,68 +1,87 @@
-version: "3.0"
+version: "3.1"
 
 intents:
-  - greet
-  - show_portfolio
-  - add_portfolio
-  - remove_portfolio
-  - plot_stock
-  - plot_portfolio
-  - stock_price
-  - calculate_sma
-  - calculate_ema
-  - calculate_rsi
-  - calculate_macd
-  - stock_news
-  - goodbye
   - bot_challenge
+  - greet
+  - goodbye
+  - stock_price
+  - get_stock_news
   - ask_demat
   - ask_mutual_funds
   - ask_sp500
+  - add_stock_to_portfolio
+  - remove_stock_from_portfolio
+  - show_portfolio
+  - plot_stock_chart
+  - introduce
+  - ask_rsi
+  - ask_macd
+  - ask_sma
+  - ask_ema
 
-entities:
-  - stock_symbol
-  - indicator
 
-slots:
-  stock_symbol:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: stock_symbol
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_bot_challenge:
+    - text: "I am a bot made by EXUN"
+  utter_iamabot:
+    - text: "I am a bot made by EXUN"
+  utter_introduce:
+    - text: "I am a bot made by EXUN"
+  
+  
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
 
-  indicator:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: indicator
+
+
+  utter_ask_demat:
+    - text: "A demat account holds your securities in electronic form."
+
+  utter_ask_mutual_funds:
+    - text: "Mutual funds pool money from multiple investors to purchase securities."
+
+  utter_ask_sp500:
+    - text: "The S&P 500 is an index of 500 of the largest companies listed on stock exchanges in the U.S."
+
+
+  action_view_portfolio:
+    - text: "Here are the stocks in your portfolio."
+
+  action_get_stock_price:
+    - text: "The current price of {stock_symbol} is {price}."
+
+  action_get_stock_news:
+    - text: "Here are the latest news articles about {stock_symbol}: {news}."
+
+
+  action_plot_stock_price:
+    - text: "Here is the price chart for {stock_symbol}."
+  
+  action_calculate_sma:
+    - text: "The Simple Moving Average (SMA) has been calculated."
+
+  action_calculate_ema:
+    - text: "The Exponential Moving Average (EMA) has been calculated."
+
+  action_calculate_rsi:
+    - text: "The Relative Strength Index (RSI) has been calculated."
+
+  action_calculate_macd:
+    - text: "The Moving Average Convergence Divergence (MACD) has been calculated."
 
 actions:
   - action_get_stock_price
-  - action_add_portfolio
-  - action_remove_portfolio
-  - action_show_portfolio
-  - action_plot_stock
-  - action_plot_portfolio
+  - action_get_stock_news
+  - action_view_portfolio
+  - action_add_to_portfolio
+  - action_remove_from_portfolio
+  - action_plot_stock_price
   - action_calculate_sma
   - action_calculate_ema
   - action_calculate_rsi
   - action_calculate_macd
-  - action_stock_news
 
-responses:
-  utter_greet:
-    - text: "Hello! How can I assist you with your stocks today?"
-  utter_goodbye:
-    - text: "Goodbye! Have a great day!"
-  utter_iamabot:
-    - text: "I am a bot here to assist you with stock information."
-  utter_ask_demat:
-    - text: "A demat account is used to hold shares and securities in electronic format."
-  utter_ask_mutual_funds:
-    - text: "Mutual funds pool money from many investors to purchase securities."
-  utter_ask_sp500:
-    - text: "The S&P 500 is a stock market index that measures the stock performance of 500 large companies."
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+
